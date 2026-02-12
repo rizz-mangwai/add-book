@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Places I've Been ✈️</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Places I've Been</h1>
+  <p class="subtitle">Keep track of everywhere you've traveled ✈️🌍</p>
+
+  <div class="grid">
+    <div class="sidebar">
+      <h2>Add New Place</h2>
+      
+      <form id="placeForm">
+        <div>
+          <label for="placeName">Place Name *</label>
+          <input type="text" id="placeName" required placeholder="Kyoto, Japan">
+        </div>
+        
+        <div>
+          <label for="country">Country</label>
+          <input type="text" id="country" placeholder="Japan">
+        </div>
+
+        <div>
+          <label for="visitYear">Year</label>
+          <input type="text" id="visitYear" placeholder="2024,">
+        </div>
+
+        <div>
+          <label for="landmarks">Main Landmarks / Things I Saw</label>
+          <textarea id="landmarks" rows="3" placeholder="Bamboo Grove"></textarea>
+        </div>
+
+        <div>
+          <label for="notes">Notes / Memories / Rating</label>
+          <textarea id="notes" rows="4" placeholder="Best cherry blossoms ever... Food was amazing... Would return in autumn... ★★★★☆"></textarea>
+        </div>
+
+        <button type="submit">Save Place</button>
+      </form>
+
+      <h2 style="margin-top: 2.5rem;">My Places</h2>
+      <ul class="place-list" id="placeList"></ul>
+    </div>
+
+    <!-- Main content: Details view -->
+    <div class="main">
+      <h2>Place Details</h2>
+      <div id="detailView">
+        <div class="empty-state">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
