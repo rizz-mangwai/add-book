@@ -1,6 +1,3 @@
-// ────────────────────────────────────────────────
-// Place class (business logic)
-// ────────────────────────────────────────────────
 class Place {
   constructor(data) {
     this.id = data.id || Date.now().toString();
@@ -33,9 +30,6 @@ class Place {
   }
 }
 
-// ────────────────────────────────────────────────
-// State & DOM elements
-// ────────────────────────────────────────────────
 const places = loadPlaces();
 let selectedId = null;
 
@@ -50,9 +44,7 @@ const elements = {
   detailView: document.getElementById('detailView')
 };
 
-// ────────────────────────────────────────────────
-// LocalStorage
-// ────────────────────────────────────────────────
+
 function loadPlaces() {
   try {
     const data = localStorage.getItem('travelPlaces');
@@ -68,9 +60,6 @@ function savePlaces() {
   localStorage.setItem('travelPlaces', JSON.stringify(places));
 }
 
-// ────────────────────────────────────────────────
-// Rendering
-// ────────────────────────────────────────────────
 function renderList() {
   elements.list.innerHTML = '';
 
@@ -82,8 +71,6 @@ function renderList() {
     elements.list.appendChild(li);
     return;
   }
-
-  // Sort newest first
   places.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
   places.forEach(place => {
@@ -151,10 +138,6 @@ function clearForm() {
   elements.landmarksInput.value = '';
   elements.notesInput.value = '';
 }
-
-// ────────────────────────────────────────────────
-// Event listeners
-// ────────────────────────────────────────────────
 elements.form.addEventListener('submit', e => {
   e.preventDefault();
 
